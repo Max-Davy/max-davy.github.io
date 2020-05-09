@@ -173,3 +173,7 @@ footer {
 .mdl-card__actions.mdl-card--border {
     margin-top: auto;
 }
+
+body {
+    background-color: #2E2E2E;
+}
