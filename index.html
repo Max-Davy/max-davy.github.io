@@ -62,6 +62,7 @@
     <!--Material Design Framework-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_purple-indigo.min.css" />
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css" />
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="./styles.css">
 </head>
@@ -83,9 +84,7 @@
                     <a class="mdl-navigation__link" href="about.html">About</a>
                     <a class="mdl-navigation__link" href="contact.html">Contact</a>
                     <a class="mdl-navigation__link" href="https://www.linkedin.com/in/maximilian-davy/" target="_blank">LinkedIn
-                        <span class="material-icons" style="font-size:15px">
-                            open_in_new
-                        </span>
+                        <span class="ms-Icon ms-Icon--OpenInNewTab" style="font-size:15px"></span>
                     </a>
                 </nav>
             </div>
@@ -103,10 +102,11 @@
                 </a>
             </nav>
         </div>
+        <!-- Main -->
         <main class="mdl-layout__content">
             <div class="mdl-grid portfolio-max-width">
                 <!-- Bike Rack -->
-                <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card">
                     <div class="mdl-card__media">
                         <img class="article-image" src="./images/bike-rack.png" border="0" alt="">
                     </div>
@@ -117,14 +117,14 @@
                         In the spring of 2018 I was one of a small group of Benedictine College students who, under the sponsorship of the College's Discovery Day program, designed a series of bicycle racks for the City of Atchison's new bike share program. The bike racks were
                         intended to be representative of local history; my design was made to resemble a biplane in honor of Amelia Earhart, who was born in Atchison.
                     </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="./images/bike-rack-watermark.pdf" target="_blank">View plans</a>
+                    <div class="mdl-card__actions">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="./images/bike-rack-watermark.pdf" target="_blank">View plans</a>
                     </div>
                 </div>
                 <!-- Tengwar Transcriber -->
-                <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card">
                     <div class="mdl-card__media">
-                        <img class="article-image" src="./images/tengwar-feanor.png" border="0" alt="">
+                        <img class="article-image" src="./images/tengwar-feanor.jpeg" border="0" alt="">
                     </div>
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">Tengwar Transcriber</h2>
@@ -133,15 +133,15 @@
                         Tengwar Transcriber is dedicated to the languages of Middle Earth. Its main features are Elvish and Dwarvish transcribers, but it also features a selection of Tolkien's poems, maps of middle earth, and more. A limited set of features is available as Windows
                         and Android apps.
                     </div>
-                    <div class="mdl-card__actions mdl-card--border">
+                    <div class="mdl-card__actions">
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://tengwartranscriber.github.io" target="_blank">Launch</a>
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://github.com/TengwarTranscriber/tengwartranscriber.github.io/" target="_blank">Github</a>
                     </div>
                 </div>
                 <!-- Sabaton Timeline -->
-                <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card">
                     <div class="mdl-card__media">
-                        <img class="article-image" src="./images/sabaton-timeline.png" border="0" alt="">
+                        <img class="article-image" src="./images/sabaton-timeline.jpeg" border="0" alt="">
                     </div>
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">Sabaton Timeline</h2>
@@ -149,15 +149,15 @@
                     <div class="mdl-card__supporting-text">
                         Sabaton Timeline is an interactive timeline of the historical persons and events depicted in the songs of the Swedish power metal band Sabaton. It features the band's notes on the songs and information on the subjects they depict.<br/>
                     </div>
-                    <div class="mdl-card__actions mdl-card--border">
+                    <div class="mdl-card__actions">
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://max-davy.github.io/sabaton-timeline/">Launch</a>
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://www.sabaton.net/" target="_blank">Sabaton Site</a>
                     </div>
                 </div>
                 <!-- Text to Phonetic -->
-                <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card">
                     <div class="mdl-card__media">
-                        <img class="article-image" src="./images/phonetic.png" border="0" alt="">
+                        <img class="article-image" src="./images/phonetic.jpeg" border="0" alt="">
                     </div>
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">Text to Phonetic</h2>
@@ -165,15 +165,15 @@
                     <div class="mdl-card__supporting-text">
                         Text To Phonetic is a pronunciation guide for English speakers who have trouble understanding the International Phonetic Alphabet. It uses a custom-compiled dictionary to convert English words or sentences to the phonetically-spelled equivalent.
                     </div>
-                    <div class="mdl-card__actions mdl-card--border">
+                    <div class="mdl-card__actions">
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://max-davy.github.io/text-to-phonetic/">Launch</a>
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://github.com/max-davy/text-to-phonetic" target="_blank">Github</a>
                     </div>
                 </div>
                 <!-- Sketchy -->
-                <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card">
                     <div class="mdl-card__media">
-                        <img class="article-image" src="./images/sketchy.png" border="0" alt="">
+                        <img class="article-image" src="./images/sketchy.jpeg" border="0" alt="">
                     </div>
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">Sketchy</h2>
@@ -181,13 +181,13 @@
                     <div class="mdl-card__supporting-text">
                         Sketchy is an online drawing program. It features a variety of advanced brushes, as well as basic features such as image export, changing image/color backgrounds, etc.
                     </div>
-                    <div class="mdl-card__actions mdl-card--border">
+                    <div class="mdl-card__actions">
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://sketchier.github.io" target="_blank">Launch</a>
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://github.com/sketchier/sketchier.github.io" target="_blank">Github</a>
                     </div>
                 </div>
                 <!-- RND Trees -->
-                <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card">
                     <div class="mdl-card__media">
                         <img class="article-image" src="./images/trees.png" border="0" alt="">
                     </div>
@@ -198,14 +198,14 @@
                         RND Trees is a mod for the Minecraft-like voxel game Minetest that adds naturally-growing trees to the game. The trees use a growth algorithm to behave like real trees, branching and growing leaves gradually based on growth parameters (which can be tuned
                         to simulate actual tree species) and available light.
                     </div>
-                    <div class="mdl-card__actions mdl-card--border">
+                    <div class="mdl-card__actions">
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://max-davy.github.io/rnd_trees/" style="padding-right: 5px;">Launch</a>
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://github.com/max-davy/rnd_trees" target="_blank" style="padding-left: 5px; padding-right: 5px;">Github</a>
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://www.minetest.net/" target="_blank" style="padding-: 5px;">Minetest</a>
                     </div>
                 </div>
                 <!-- Speck -->
-                <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card">
                     <div class="mdl-card__media">
                         <img class="article-image" src="./images/Speck.png" border="0" alt="">
                     </div>
@@ -216,7 +216,7 @@
                         Speck is a WebGL-powered 3D atomic structure renderer. Speck is an open-source project created by Rye Terrell, who has not maintained it since 2015. My version remedies a major inconvenience of the original, that of finding properly formatted molecular
                         models to import. An integrated search box allows searching of a database of structure files by compound name, as well pulling information about the selected compound from Wikipedia.
                     </div>
-                    <div class="mdl-card__actions mdl-card--border">
+                    <div class="mdl-card__actions">
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://max-davy.github.io/speck/" style="padding-right: 5px;">Launch</a>
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://github.com/max-davy/speck" target="_blank" style="padding-left: 5px; padding-right: 5px;">Github</a>
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://github.com/wwwtyro/speck" target="_blank" style="padding-: 5px;">Source</a>
