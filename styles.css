@@ -1,3 +1,41 @@
+.spectrum-background {
+    background: linear-gradient( cyan, transparent), linear-gradient( -45deg, magenta, transparent), linear-gradient( 45deg, yellow, transparent);
+    background-blend-mode: multiply;
+    background-attachment: local;
+}
+
+.glass-card {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    color: white;
+}
+
+.glass-element,
+.mdl-mini-footer,
+footer,
+.mdl-layout__header {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+    background-image: none !important;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    color: white;
+}
+
+.mdl-card__title-text,
+.mdl-card__supporting-text,
+.mdl-textfield,
+.mdl-textfield__input {
+    color: white;
+}
+
+.mdl-textfield__label {
+    color: rgba(255, 255, 255, 0.5);
+}
+
 body {
     overscroll-behavior-y: none;
 }
@@ -53,7 +91,7 @@ body {
 }
 
 .portfolio-navigation-row {
-    background-color: rgba(0, 0, 0, 0.08);
+    background-color: none;
     text-transform: uppercase;
     height: 45px;
 }
@@ -71,8 +109,8 @@ body {
     line-height: 42px;
 }
 
-.portfolio-header .mdl-layout__drawer-button {
-    background-color: rgba(197, 197, 197, 0.44);
+.mdl-layout__drawer-button {
+    background-color: rgb(0, 0, 0, 0) !important;
 }
 
 .portfolio-navigation-row .is-active {
@@ -94,12 +132,6 @@ body {
 
 .portfolio-card {
     width: calc(50% - 16px) !important;
-}
-
-.portfolio-navigation-row {
-    backdrop-filter: blur(5px);
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 50%);
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 50%);
 }
 
 .portfolio-max-width>.mdl-cell {
