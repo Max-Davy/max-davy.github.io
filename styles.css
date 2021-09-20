@@ -5,6 +5,11 @@
     background-attachment: local;
 }
 
+.spectrum-background.blurred-background {
+    -webkit-filter: blur(16px);
+    filter: blur(16px);
+}
+
 .glass-card {
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
