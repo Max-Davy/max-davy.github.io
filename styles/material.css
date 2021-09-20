@@ -7841,9 +7841,6 @@ body {
 
 .portfolio-header {
     position: absolute;
-    background-image: url(./images/header-bg.png);
-    background-size: cover;
-    background-position: center;
 }
 
 .portfolio-header .mdl-layout__header-row {
@@ -7872,7 +7869,7 @@ body {
 }
 
 .portfolio-logo {
-    background: url(./images/logo.png) 50% no-repeat;
+    background: url(/images/logo.png) 50% no-repeat;
     background-size: cover;
     height: 150px;
     width: 150px;
@@ -7945,18 +7942,6 @@ body {
     border-radius: 0.5em;
 }
 
-.portfolio-blog-card-full-bg {
-    background: url(./images/example-blog03.jpg) center / cover;
-}
-
-.portfolio-blog-card-event-bg {
-    background: url(./images/example-blog05.jpg) center / cover;
-}
-
-.portfolio-blog-card-strip-bg {
-    background: url(./images/example-blog06.jpg) center / cover;
-}
-
 .portfolio-blog-card-compact .mdl-card__title {
     padding-bottom: 0;
 }
@@ -8015,11 +8000,6 @@ img.article-image {
 
 .portfolio-contact .mdl-textfield {
     width: 100%;
-}
-
-footer {
-    background-image: url(./images/footer-background.png);
-    background-size: cover;
 }
 
 .mdl-card__actions.mdl-card--border {
