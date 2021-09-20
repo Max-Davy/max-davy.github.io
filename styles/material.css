@@ -8028,6 +8028,6 @@ main {
     border-radius: 6px;
 }
 
-::-webkit-scrollbar-track-piece:start {
+main::-webkit-scrollbar-track-piece:start {
     margin-top: 247px;
 }
