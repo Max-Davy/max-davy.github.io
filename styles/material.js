@@ -3426,6 +3426,7 @@
                     mode = this.Mode_.WATERFALL;
                     this.header_.addEventListener('transitionend', this.headerTransitionEndHandler_.bind(this));
                     this.header_.addEventListener('click', this.headerClickHandler_.bind(this));
+
                 } else if (this.header_.classList.contains(this.CssClasses_.HEADER_SCROLL)) {
                     mode = this.Mode_.SCROLL;
                     container.classList.add(this.CssClasses_.HAS_SCROLLING_HEADER);
