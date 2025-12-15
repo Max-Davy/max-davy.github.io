@@ -75,4 +75,5 @@ function showAll() {
         el.classList.add('visuallyhidden');
     });   
     currentCategory="";
+    window.location.hash = "";
 }
