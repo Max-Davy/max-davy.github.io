@@ -64,6 +64,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="./styles/material.css" />
     <script defer src="./styles/material.js"></script>
+    <script defer src="./styles/category.js"></script>
 </head>
 
 <body>
@@ -117,8 +118,53 @@
         <!-- Main -->
         <main class="mdl-layout__content">
             <div class="mdl-grid portfolio-max-width">
+                <div class="mdl-chip-row">
+                    <span class="mdl-chip-label">
+                        <span class="mdl-chip__text">Categories:</span>
+                    </span>
+                    <span class="mdl-chip" onclick="showClass('model')">
+                        <span class="mdl-chip__text">3D Models</span>
+                        <button type="button" class="mdl-chip__action model visuallyhidden" onclick="showAll()"><i class="material-icons">cancel</i></button>
+                    </span>
+                    <span class="mdl-chip" onclick="showClass('project')">
+                        <span class="mdl-chip__text">Projects</span>
+                        <button type="button" class="mdl-chip__action project visuallyhidden" onclick="showAll()"><i class="material-icons">cancel</i></button>
+                    </span>
+                    <span class="mdl-chip" onclick="showClass('website')">
+                        <span class="mdl-chip__text">Websites</span>
+                        <button type="button" class="mdl-chip__action website visuallyhidden" onclick="showAll()"><i class="material-icons">cancel</i></button>
+                    </span>
+                    <span class="mdl-chip" onclick="showClass('article')">
+                        <span class="mdl-chip__text">Journal Articles</span>
+                        <button type="button" class="mdl-chip__action article visuallyhidden" onclick="showAll()"><i class="material-icons">cancel</i></button>
+                    </span>
+                    <span class="mdl-chip" onclick="showClass('misc')">
+                        <span class="mdl-chip__text">Misc</span>
+                        <button type="button" class="mdl-chip__action misc visuallyhidden" onclick="showAll()"><i class="material-icons">cancel</i></button>
+                    </span>
+                </div>
+                <!-- Hanging Planter -->
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card model">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src="./images/planter.jpg" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">I created a 3D Printable Hanging Planter</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>
+                        I created a 3D printable hanging planter based on the IKEA CHILISTRÅN.
+                        </p>
+                        <p>
+                        It can be printed in 5 pieces without supports and snapped together with no fasteners or adhesive needed
+                        </p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://www.thingiverse.com/thing:7154653" target="_blank">Download files</a>
+                    </div>
+                </div>
                 <!-- Octoplex -->
-                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card project website">
                     <div class="mdl-card__media">
                         <img class="article-image" src="./images/Octoplex.jpg" border="0" alt="">
                     </div>
@@ -144,7 +190,7 @@
                     </div>
                 </div>
                 <!-- Sauce Sans -->
-                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card misc">
                     <div class="mdl-card__media">
                         <img class="article-image" src="./images/Sauce-Sans.png" border="0" alt="">
                     </div>
@@ -166,7 +212,7 @@
                     </div>
                 </div>
                 <!-- Business Card Holder-->
-                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card model">
                     <div class="mdl-card__media">
                         <img class="article-image" src="./images/business-card-holder.jpg" border="0" alt="">
                     </div>
@@ -182,7 +228,7 @@
                     </div>
                 </div>
                 <!-- 3D Print Spool Holder-->
-                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card project model">
                     <div class="mdl-card__media">
                         <img class="article-image" src="./images/ender-3-v2-spool.png" border="0" alt="">
                     </div>
@@ -197,7 +243,7 @@
                     </div>
                 </div>
                 <!-- 3D Print USB-->
-                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card project model">
                     <div class="mdl-card__media">
                         <img class="article-image" src="./images/ender-3-v2-power.jpeg" border="0" alt="">
                     </div>
@@ -212,7 +258,7 @@
                     </div>
                 </div>
                 <!-- Bladeless Fan-->
-                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card project model">
                     <div class="mdl-card__media">
                         <img class="article-image" src="./images/bladeless-fan.jpg" border="0" alt="">
                     </div>
@@ -227,7 +273,7 @@
                     </div>
                 </div>
                 <!-- Article -->
-                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card article">
                     <div class="mdl-card__media">
                         <img class="article-image" src="./images/article.jpg" border="0" alt="">
                     </div>
@@ -250,7 +296,7 @@
                     </div>
                 </div>
                 <!-- Process Trainer -->
-                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card project">
                     <div class="mdl-card__media">
                         <img class="article-image" src="./images/process-trainer.jpg" border="0" alt="">
                     </div>
@@ -265,7 +311,7 @@
                     </div>
                 </div>
                 <!-- Laser Cutter -->
-                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card project">
                     <div class="mdl-card__media">
                         <img class="article-image" src="./images/laser-cutter.jpg" border="0" alt="">
                     </div>
@@ -282,7 +328,7 @@
                     </div>
                 </div>
                 <!-- Bike Rack -->
-                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card project">
                     <div class="mdl-card__media">
                         <img class="article-image" src="./images/bike-rack.jpg" border="0" alt="">
                     </div>
@@ -298,7 +344,7 @@
                     </div>
                 </div>
                 <!-- Tengwar Transcriber -->
-                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card website">
                     <div class="mdl-card__media">
                         <img class="article-image" src="./images/tengwar-feanor.jpeg" border="0" alt="">
                     </div>
@@ -315,7 +361,7 @@
                     </div>
                 </div>
                 <!-- Sabaton Timeline -->
-                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card website">
                     <div class="mdl-card__media">
                         <img class="article-image" src="./images/sabaton-timeline.jpeg" border="0" alt="">
                     </div>
@@ -331,7 +377,7 @@
                     </div>
                 </div>
                 <!-- Text to Phonetic -->
-                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card website">
                     <div class="mdl-card__media">
                         <img class="article-image" src="./images/phonetic.jpeg" border="0" alt="">
                     </div>
@@ -347,7 +393,7 @@
                     </div>
                 </div>
                 <!-- Sketchy -->
-                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card website">
                     <div class="mdl-card__media">
                         <img class="article-image" src="./images/sketchy.jpeg" border="0" alt="">
                     </div>
@@ -363,7 +409,7 @@
                     </div>
                 </div>
                 <!-- RND Trees -->
-                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card website">
                     <div class="mdl-card__media">
                         <img class="article-image" src="./images/trees.jpeg" border="0" alt="">
                     </div>
@@ -381,7 +427,7 @@
                     </div>
                 </div>
                 <!-- Speck -->
-                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card">
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card website">
                     <div class="mdl-card__media">
                         <img class="article-image" src="./images/speck.jpeg" border="0" alt="">
                     </div>
