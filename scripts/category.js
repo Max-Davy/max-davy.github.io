@@ -9,6 +9,18 @@ const categories =
 
 currentCategory = "";
 
+//Get hash
+const parsedHash = new URLSearchParams(
+    window.location.hash.substring(1) //any_hash_key=any_value
+);
+currentCategory = parsedHash.get("category");
+
+//If it is valid
+if (categories.includes(currentCategory)) {
+    //Then load that category
+    showClass(currentCategory);
+}
+
 function showClass(className) {
     // Hide all cards first
     hideAll();
