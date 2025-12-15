@@ -1,7 +1,7 @@
 const categories = 
     [
         'model',
-        'project',
+        'build',
         'website',
         'article',
         'misc'
