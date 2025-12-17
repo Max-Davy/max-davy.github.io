@@ -4,6 +4,7 @@ const categories =
         'build',
         'website',
         'article',
+        'font',
         'misc'
     ];
 
