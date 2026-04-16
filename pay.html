@@ -1,0 +1,167 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+
+<!--This shall serve as the "prominant notice" required by the Apache License for modification-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Mechanical Engineer, Software Developer, and Jack-of-All-Trades">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Max Davy - Pay</title>
+
+
+    <!-- Tweaks for various OSs:-->
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" type="image/png" href="./icons/apple-icon-precomposed.png" />
+
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Max Davy">
+    <link rel="apple-touch-icon-precomposed" href="./icons/apple-icon-precomposed.png">
+
+    <!-- Windows -->
+    <meta name="msapplication-TileImage" content="./icons/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#673ab7">
+    <meta name="theme-color" content="#673ab7">
+
+    <!-- Apple -->
+    <link rel="apple-touch-icon" sizes="57x57" href="./icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+
+
+    <!--Material Design Framework-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./styles/material.css" />
+    <script defer src="./styles/material.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=BAA-Pvq3C_YWY8rRhLAXAGLG63sS1cVcyC2frLTj6QkbguZ77CBE89_jV3n9DA-AIApscpWSmj5HtjdCTw&components=hosted-buttons&enable-funding=venmo&currency=USD">
+    </script>
+</head>
+
+<body>
+    <div class="spectrum-background-container">
+        <img class="spectrum-background" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIGlkPSJ2aXN1YWwiIHZpZXdCb3g9IjAgMCA5MDAgNjAwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI5MDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjNTRjM2ZmIj48L3JlY3Q+PHBhdGggZD0iTTAgMTU4TDM3LjUgMTk3LjNDNzUgMjM2LjcgMTUwIDMxNS4zIDIyNSAzMTcuN0MzMDAgMzIwIDM3NSAyNDYgNDUwIDIwOC44QzUyNSAxNzEuNyA2MDAgMTcxLjMgNjc1IDE4Mi44Qzc1MCAxOTQuMyA4MjUgMjE3LjcgODYyLjUgMjI5LjNMOTAwIDI0MUw5MDAgNjAxTDg2Mi41IDYwMUM4MjUgNjAxIDc1MCA2MDEgNjc1IDYwMUM2MDAgNjAxIDUyNSA2MDEgNDUwIDYwMUMzNzUgNjAxIDMwMCA2MDEgMjI1IDYwMUMxNTAgNjAxIDc1IDYwMSAzNy41IDYwMUwwIDYwMVoiIGZpbGw9IiM1NGMzZmYiPjwvcGF0aD48cGF0aCBkPSJNMCAzMTVMMzcuNSAyOTEuM0M3NSAyNjcuNyAxNTAgMjIwLjMgMjI1IDE5OEMzMDAgMTc1LjcgMzc1IDE3OC4zIDQ1MCAyMDAuMkM1MjUgMjIyIDYwMCAyNjMgNjc1IDI2My44Qzc1MCAyNjQuNyA4MjUgMjI1LjMgODYyLjUgMjA1LjdMOTAwIDE4Nkw5MDAgNjAxTDg2Mi41IDYwMUM4MjUgNjAxIDc1MCA2MDEgNjc1IDYwMUM2MDAgNjAxIDUyNSA2MDEgNDUwIDYwMUMzNzUgNjAxIDMwMCA2MDEgMjI1IDYwMUMxNTAgNjAxIDc1IDYwMSAzNy41IDYwMUwwIDYwMVoiIGZpbGw9IiM0NWJjZmYiPjwvcGF0aD48cGF0aCBkPSJNMCAyNjhMMzcuNSAyNjAuOEM3NSAyNTMuNyAxNTAgMjM5LjMgMjI1IDIzOC44QzMwMCAyMzguMyAzNzUgMjUxLjcgNDUwIDI1NS4zQzUyNSAyNTkgNjAwIDI1MyA2NzUgMjg2LjVDNzUwIDMyMCA4MjUgMzkzIDg2Mi41IDQyOS41TDkwMCA0NjZMOTAwIDYwMUw4NjIuNSA2MDFDODI1IDYwMSA3NTAgNjAxIDY3NSA2MDFDNjAwIDYwMSA1MjUgNjAxIDQ1MCA2MDFDMzc1IDYwMSAzMDAgNjAxIDIyNSA2MDFDMTUwIDYwMSA3NSA2MDEgMzcuNSA2MDFMMCA2MDFaIiBmaWxsPSIjMzdiNWZmIj48L3BhdGg+PHBhdGggZD0iTTAgMjUxTDM3LjUgMjg2LjNDNzUgMzIxLjcgMTUwIDM5Mi4zIDIyNSA0MTguNUMzMDAgNDQ0LjcgMzc1IDQyNi4zIDQ1MCA0MDEuNUM1MjUgMzc2LjcgNjAwIDM0NS4zIDY3NSAzMTYuOEM3NTAgMjg4LjMgODI1IDI2Mi43IDg2Mi41IDI0OS44TDkwMCAyMzdMOTAwIDYwMUw4NjIuNSA2MDFDODI1IDYwMSA3NTAgNjAxIDY3NSA2MDFDNjAwIDYwMSA1MjUgNjAxIDQ1MCA2MDFDMzc1IDYwMSAzMDAgNjAxIDIyNSA2MDFDMTUwIDYwMSA3NSA2MDEgMzcuNSA2MDFMMCA2MDFaIiBmaWxsPSIjMjlhZGZmIj48L3BhdGg+PHBhdGggZD0iTTAgNDYzTDM3LjUgNDY1LjVDNzUgNDY4IDE1MCA0NzMgMjI1IDQ0MS4zQzMwMCA0MDkuNyAzNzUgMzQxLjMgNDUwIDMyMS4zQzUyNSAzMDEuMyA2MDAgMzI5LjcgNjc1IDM0OUM3NTAgMzY4LjMgODI1IDM3OC43IDg2Mi41IDM4My44TDkwMCAzODlMOTAwIDYwMUw4NjIuNSA2MDFDODI1IDYwMSA3NTAgNjAxIDY3NSA2MDFDNjAwIDYwMSA1MjUgNjAxIDQ1MCA2MDFDMzc1IDYwMSAzMDAgNjAxIDIyNSA2MDFDMTUwIDYwMSA3NSA2MDEgMzcuNSA2MDFMMCA2MDFaIiBmaWxsPSIjMWVhNWZmIj48L3BhdGg+PHBhdGggZD0iTTAgNTE0TDM3LjUgNDkyQzc1IDQ3MCAxNTAgNDI2IDIyNSA0MTkuNUMzMDAgNDEzIDM3NSA0NDQgNDUwIDQ0NS4zQzUyNSA0NDYuNyA2MDAgNDE4LjMgNjc1IDQwMC4yQzc1MCAzODIgODI1IDM3NCA4NjIuNSAzNzBMOTAwIDM2Nkw5MDAgNjAxTDg2Mi41IDYwMUM4MjUgNjAxIDc1MCA2MDEgNjc1IDYwMUM2MDAgNjAxIDUyNSA2MDEgNDUwIDYwMUMzNzUgNjAxIDMwMCA2MDEgMjI1IDYwMUMxNTAgNjAxIDc1IDYwMSAzNy41IDYwMUwwIDYwMVoiIGZpbGw9IiMxOTlkZmYiPjwvcGF0aD48cGF0aCBkPSJNMCAzOTRMMzcuNSA0MTMuOEM3NSA0MzMuNyAxNTAgNDczLjMgMjI1IDQ4NC4zQzMwMCA0OTUuMyAzNzUgNDc3LjcgNDUwIDQ2NS44QzUyNSA0NTQgNjAwIDQ0OCA2NzUgNDUwLjVDNzUwIDQ1MyA4MjUgNDY0IDg2Mi41IDQ2OS41TDkwMCA0NzVMOTAwIDYwMUw4NjIuNSA2MDFDODI1IDYwMSA3NTAgNjAxIDY3NSA2MDFDNjAwIDYwMSA1MjUgNjAxIDQ1MCA2MDFDMzc1IDYwMSAzMDAgNjAxIDIyNSA2MDFDMTUwIDYwMSA3NSA2MDEgMzcuNSA2MDFMMCA2MDFaIiBmaWxsPSIjMWQ5NWZmIj48L3BhdGg+PHBhdGggZD0iTTAgNDQyTDM3LjUgNDU1LjdDNzUgNDY5LjMgMTUwIDQ5Ni43IDIyNSA1MTJDMzAwIDUyNy4zIDM3NSA1MzAuNyA0NTAgNTI4LjJDNTI1IDUyNS43IDYwMCA1MTcuMyA2NzUgNTAwQzc1MCA0ODIuNyA4MjUgNDU2LjMgODYyLjUgNDQzLjJMOTAwIDQzMEw5MDAgNjAxTDg2Mi41IDYwMUM4MjUgNjAxIDc1MCA2MDEgNjc1IDYwMUM2MDAgNjAxIDUyNSA2MDEgNDUwIDYwMUMzNzUgNjAxIDMwMCA2MDEgMjI1IDYwMUMxNTAgNjAxIDc1IDYwMSAzNy41IDYwMUwwIDYwMVoiIGZpbGw9IiMyZjhjZmYiPjwvcGF0aD48cGF0aCBkPSJNMCA0MjdMMzcuNSA0NDQuOEM3NSA0NjIuNyAxNTAgNDk4LjMgMjI1IDUwN0MzMDAgNTE1LjcgMzc1IDQ5Ny4zIDQ1MCA0ODYuNUM1MjUgNDc1LjcgNjAwIDQ3Mi4zIDY3NSA0ODRDNzUwIDQ5NS43IDgyNSA1MjIuMyA4NjIuNSA1MzUuN0w5MDAgNTQ5TDkwMCA2MDFMODYyLjUgNjAxQzgyNSA2MDEgNzUwIDYwMSA2NzUgNjAxQzYwMCA2MDEgNTI1IDYwMSA0NTAgNjAxQzM3NSA2MDEgMzAwIDYwMSAyMjUgNjAxQzE1MCA2MDEgNzUgNjAxIDM3LjUgNjAxTDAgNjAxWiIgZmlsbD0iIzQ2ODFmZiI+PC9wYXRoPjxwYXRoIGQ9Ik0wIDU0M0wzNy41IDUyOS4zQzc1IDUxNS43IDE1MCA0ODguMyAyMjUgNDgwLjVDMzAwIDQ3Mi43IDM3NSA0ODQuMyA0NTAgNDkyLjdDNTI1IDUwMSA2MDAgNTA2IDY3NSA1MTMuMkM3NTAgNTIwLjMgODI1IDUyOS43IDg2Mi41IDUzNC4zTDkwMCA1MzlMOTAwIDYwMUw4NjIuNSA2MDFDODI1IDYwMSA3NTAgNjAxIDY3NSA2MDFDNjAwIDYwMSA1MjUgNjAxIDQ1MCA2MDFDMzc1IDYwMSAzMDAgNjAxIDIyNSA2MDFDMTUwIDYwMSA3NSA2MDEgMzcuNSA2MDFMMCA2MDFaIiBmaWxsPSIjNWY3NWZmIj48L3BhdGg+PHBhdGggZD0iTTAgNDk1TDM3LjUgNDk3LjVDNzUgNTAwIDE1MCA1MDUgMjI1IDUwNi41QzMwMCA1MDggMzc1IDUwNiA0NTAgNTEwLjhDNTI1IDUxNS43IDYwMCA1MjcuMyA2NzUgNTI1LjdDNzUwIDUyNCA4MjUgNTA5IDg2Mi41IDUwMS41TDkwMCA0OTRMOTAwIDYwMUw4NjIuNSA2MDFDODI1IDYwMSA3NTAgNjAxIDY3NSA2MDFDNjAwIDYwMSA1MjUgNjAxIDQ1MCA2MDFDMzc1IDYwMSAzMDAgNjAxIDIyNSA2MDFDMTUwIDYwMSA3NSA2MDEgMzcuNSA2MDFMMCA2MDFaIiBmaWxsPSIjNzc2NmZmIj48L3BhdGg+PHBhdGggZD0iTTAgNTM0TDM3LjUgNTM1LjNDNzUgNTM2LjcgMTUwIDUzOS4zIDIyNSA1MzkuN0MzMDAgNTQwIDM3NSA1MzggNDUwIDUzOC43QzUyNSA1MzkuMyA2MDAgNTQyLjcgNjc1IDU0NkM3NTAgNTQ5LjMgODI1IDU1Mi43IDg2Mi41IDU1NC4zTDkwMCA1NTZMOTAwIDYwMUw4NjIuNSA2MDFDODI1IDYwMSA3NTAgNjAxIDY3NSA2MDFDNjAwIDYwMSA1MjUgNjAxIDQ1MCA2MDFDMzc1IDYwMSAzMDAgNjAxIDIyNSA2MDFDMTUwIDYwMSA3NSA2MDEgMzcuNSA2MDFMMCA2MDFaIiBmaWxsPSIjOGY1NGZmIj48L3BhdGg+PC9zdmc+">
+    </div>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header glass-element">
+            <div class="mdl-layout__header-row portfolio-logo-row">
+                <span class="mdl-layout__title">
+                    <div class="portfolio-logo"></div>
+                    <span class="mdl-layout-title">Max Davy</span>
+                    <span class="mdl-card__supporting-text">Mechanical/Electrical/Software Engineer</span>
+                </span>
+            </div>
+            <!-- Links for large screens -->
+            <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
+                <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                    <a class="mdl-navigation__link is-active" href="index.html">Projects</a>
+                    <a class="mdl-navigation__link" href="about.html">About</a>
+                    <a class="mdl-navigation__link" style="color: white;" href="mailto:max@davy.engineer">Contact
+                        <span class="material-icons" style="font-size:15px">
+                            mail
+                        </span>
+                    </a>
+                    <a class="mdl-navigation__link" href="https://www.linkedin.com/in/maximilian-davy/" target="_blank">LinkedIn
+                        <span class="material-icons" style="font-size:15px">
+                            person
+                        </span>
+                    </a>
+                    <a class="mdl-navigation__link" href="pay.html">Pay
+                        <span class="material-icons" style="font-size:15px">
+                            payment
+                        </span>
+                    </a>
+                </nav>
+            </div>
+        </header>
+        <!-- Links for small screens -->
+        <div class="mdl-layout__drawer mdl-layout--small-screen-only glass-element">
+            <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                <a class="mdl-navigation__link is-active" href="index.html" style="color: white;">Projects</a>
+                <a class="mdl-navigation__link" style="color: white;" href="about.html">About</a>
+                <a class="mdl-navigation__link" style="color: white;" href="mailto:max@davy.engineer">Contact
+                    <span class="material-icons" style="font-size:15px">
+                        mail
+                    </span>
+                </a>
+                <a class="mdl-navigation__link" style="color: white;" href="https://www.linkedin.com/in/maximilian-davy/" target="_blank">LinkedIn
+                    <span class="material-icons" style="font-size:15px">
+                        person
+                    </span>
+                </a>
+                <a class="mdl-navigation__link" style="color: white;" href="pay.html">Pay
+                    <span class="material-icons" style="font-size:15px">
+                        payment
+                    </span>
+                </a>
+            </nav>
+        </div>
+        <!--Main-->
+        <main class="mdl-layout__content  spectrum-background">
+            <div class="mdl-grid portfolio-max-width">
+
+                <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp glass-card">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Pay</h2>
+                    </div>
+
+                    <div class="mdl-grid portfolio-copy">
+                        <div id="paypal-container-QJFT3MLQYFCVW"></div>
+                            <script>
+                            paypal.HostedButtons({
+                                hostedButtonId: "QJFT3MLQYFCVW",
+                            }).render("#paypal-container-QJFT3MLQYFCVW")
+                            </script>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="mdl-mini-footer" style="margin-top: 50px">
+                <div class="mdl-mini-footer__left-section">
+                    <div class="mdl-logo">© 2024 Max Davy</div>
+                </div>
+                <div class="mdl-mini-footer__right-section">
+                    <ul class="mdl-mini-footer__link-list">
+                        <li>Created using:</li>
+                        <li><a href="https://pages.github.com" target=_blank>Github Pages</a></li>
+                        <li><a href="https://getmdl.io" target="_blank">Material Design Lite</a></li>
+                        <li><a href="https://vscodium.com/" target="_blank">VS Codium</a></li>
+                        <li><a href="https://icons8.com/" target="_blank">Icons8</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </main>
+    </div>
+    <script src="./styles/material.js"></script>
+</body>
+
+</html>
