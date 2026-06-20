@@ -1,0 +1,504 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+
+<!--This shall serve as the "prominant notice" required by the Apache License for modification-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Mechanical, Electrical, and Software Engineer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Max Davy</title>
+
+
+    <!-- Tweaks for various OSs:-->
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" type="image/png" href="./icons/favicon.png" />
+
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Max Davy">
+    <link rel="apple-touch-icon-precomposed" href="./icons/apple-icon-precomposed.png">
+
+    <!-- Windows -->
+    <meta name="msapplication-TileImage" content="./icons/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#673ab7">
+    <meta name="theme-color" content="#673ab7">
+
+
+    <!-- Apple -->
+    <link rel="apple-touch-icon" sizes="57x57" href="./icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+
+
+    <!--Material Design Framework-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./styles/material.css" />
+    <script defer src="./styles/material.js"></script>
+    <script defer src="./scripts/category.js"></script>
+    <script src="./scripts/sw-registration.js"></script>
+</head>
+
+<body>
+    <div class="spectrum-background-container">
+        <img class="spectrum-background" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIGlkPSJ2aXN1YWwiIHZpZXdCb3g9IjAgMCA5MDAgNjAwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI5MDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjNTRjM2ZmIj48L3JlY3Q+PHBhdGggZD0iTTAgMTU4TDM3LjUgMTk3LjNDNzUgMjM2LjcgMTUwIDMxNS4zIDIyNSAzMTcuN0MzMDAgMzIwIDM3NSAyNDYgNDUwIDIwOC44QzUyNSAxNzEuNyA2MDAgMTcxLjMgNjc1IDE4Mi44Qzc1MCAxOTQuMyA4MjUgMjE3LjcgODYyLjUgMjI5LjNMOTAwIDI0MUw5MDAgNjAxTDg2Mi41IDYwMUM4MjUgNjAxIDc1MCA2MDEgNjc1IDYwMUM2MDAgNjAxIDUyNSA2MDEgNDUwIDYwMUMzNzUgNjAxIDMwMCA2MDEgMjI1IDYwMUMxNTAgNjAxIDc1IDYwMSAzNy41IDYwMUwwIDYwMVoiIGZpbGw9IiM1NGMzZmYiPjwvcGF0aD48cGF0aCBkPSJNMCAzMTVMMzcuNSAyOTEuM0M3NSAyNjcuNyAxNTAgMjIwLjMgMjI1IDE5OEMzMDAgMTc1LjcgMzc1IDE3OC4zIDQ1MCAyMDAuMkM1MjUgMjIyIDYwMCAyNjMgNjc1IDI2My44Qzc1MCAyNjQuNyA4MjUgMjI1LjMgODYyLjUgMjA1LjdMOTAwIDE4Nkw5MDAgNjAxTDg2Mi41IDYwMUM4MjUgNjAxIDc1MCA2MDEgNjc1IDYwMUM2MDAgNjAxIDUyNSA2MDEgNDUwIDYwMUMzNzUgNjAxIDMwMCA2MDEgMjI1IDYwMUMxNTAgNjAxIDc1IDYwMSAzNy41IDYwMUwwIDYwMVoiIGZpbGw9IiM0NWJjZmYiPjwvcGF0aD48cGF0aCBkPSJNMCAyNjhMMzcuNSAyNjAuOEM3NSAyNTMuNyAxNTAgMjM5LjMgMjI1IDIzOC44QzMwMCAyMzguMyAzNzUgMjUxLjcgNDUwIDI1NS4zQzUyNSAyNTkgNjAwIDI1MyA2NzUgMjg2LjVDNzUwIDMyMCA4MjUgMzkzIDg2Mi41IDQyOS41TDkwMCA0NjZMOTAwIDYwMUw4NjIuNSA2MDFDODI1IDYwMSA3NTAgNjAxIDY3NSA2MDFDNjAwIDYwMSA1MjUgNjAxIDQ1MCA2MDFDMzc1IDYwMSAzMDAgNjAxIDIyNSA2MDFDMTUwIDYwMSA3NSA2MDEgMzcuNSA2MDFMMCA2MDFaIiBmaWxsPSIjMzdiNWZmIj48L3BhdGg+PHBhdGggZD0iTTAgMjUxTDM3LjUgMjg2LjNDNzUgMzIxLjcgMTUwIDM5Mi4zIDIyNSA0MTguNUMzMDAgNDQ0LjcgMzc1IDQyNi4zIDQ1MCA0MDEuNUM1MjUgMzc2LjcgNjAwIDM0NS4zIDY3NSAzMTYuOEM3NTAgMjg4LjMgODI1IDI2Mi43IDg2Mi41IDI0OS44TDkwMCAyMzdMOTAwIDYwMUw4NjIuNSA2MDFDODI1IDYwMSA3NTAgNjAxIDY3NSA2MDFDNjAwIDYwMSA1MjUgNjAxIDQ1MCA2MDFDMzc1IDYwMSAzMDAgNjAxIDIyNSA2MDFDMTUwIDYwMSA3NSA2MDEgMzcuNSA2MDFMMCA2MDFaIiBmaWxsPSIjMjlhZGZmIj48L3BhdGg+PHBhdGggZD0iTTAgNDYzTDM3LjUgNDY1LjVDNzUgNDY4IDE1MCA0NzMgMjI1IDQ0MS4zQzMwMCA0MDkuNyAzNzUgMzQxLjMgNDUwIDMyMS4zQzUyNSAzMDEuMyA2MDAgMzI5LjcgNjc1IDM0OUM3NTAgMzY4LjMgODI1IDM3OC43IDg2Mi41IDM4My44TDkwMCAzODlMOTAwIDYwMUw4NjIuNSA2MDFDODI1IDYwMSA3NTAgNjAxIDY3NSA2MDFDNjAwIDYwMSA1MjUgNjAxIDQ1MCA2MDFDMzc1IDYwMSAzMDAgNjAxIDIyNSA2MDFDMTUwIDYwMSA3NSA2MDEgMzcuNSA2MDFMMCA2MDFaIiBmaWxsPSIjMWVhNWZmIj48L3BhdGg+PHBhdGggZD0iTTAgNTE0TDM3LjUgNDkyQzc1IDQ3MCAxNTAgNDI2IDIyNSA0MTkuNUMzMDAgNDEzIDM3NSA0NDQgNDUwIDQ0NS4zQzUyNSA0NDYuNyA2MDAgNDE4LjMgNjc1IDQwMC4yQzc1MCAzODIgODI1IDM3NCA4NjIuNSAzNzBMOTAwIDM2Nkw5MDAgNjAxTDg2Mi41IDYwMUM4MjUgNjAxIDc1MCA2MDEgNjc1IDYwMUM2MDAgNjAxIDUyNSA2MDEgNDUwIDYwMUMzNzUgNjAxIDMwMCA2MDEgMjI1IDYwMUMxNTAgNjAxIDc1IDYwMSAzNy41IDYwMUwwIDYwMVoiIGZpbGw9IiMxOTlkZmYiPjwvcGF0aD48cGF0aCBkPSJNMCAzOTRMMzcuNSA0MTMuOEM3NSA0MzMuNyAxNTAgNDczLjMgMjI1IDQ4NC4zQzMwMCA0OTUuMyAzNzUgNDc3LjcgNDUwIDQ2NS44QzUyNSA0NTQgNjAwIDQ0OCA2NzUgNDUwLjVDNzUwIDQ1MyA4MjUgNDY0IDg2Mi41IDQ2OS41TDkwMCA0NzVMOTAwIDYwMUw4NjIuNSA2MDFDODI1IDYwMSA3NTAgNjAxIDY3NSA2MDFDNjAwIDYwMSA1MjUgNjAxIDQ1MCA2MDFDMzc1IDYwMSAzMDAgNjAxIDIyNSA2MDFDMTUwIDYwMSA3NSA2MDEgMzcuNSA2MDFMMCA2MDFaIiBmaWxsPSIjMWQ5NWZmIj48L3BhdGg+PHBhdGggZD0iTTAgNDQyTDM3LjUgNDU1LjdDNzUgNDY5LjMgMTUwIDQ5Ni43IDIyNSA1MTJDMzAwIDUyNy4zIDM3NSA1MzAuNyA0NTAgNTI4LjJDNTI1IDUyNS43IDYwMCA1MTcuMyA2NzUgNTAwQzc1MCA0ODIuNyA4MjUgNDU2LjMgODYyLjUgNDQzLjJMOTAwIDQzMEw5MDAgNjAxTDg2Mi41IDYwMUM4MjUgNjAxIDc1MCA2MDEgNjc1IDYwMUM2MDAgNjAxIDUyNSA2MDEgNDUwIDYwMUMzNzUgNjAxIDMwMCA2MDEgMjI1IDYwMUMxNTAgNjAxIDc1IDYwMSAzNy41IDYwMUwwIDYwMVoiIGZpbGw9IiMyZjhjZmYiPjwvcGF0aD48cGF0aCBkPSJNMCA0MjdMMzcuNSA0NDQuOEM3NSA0NjIuNyAxNTAgNDk4LjMgMjI1IDUwN0MzMDAgNTE1LjcgMzc1IDQ5Ny4zIDQ1MCA0ODYuNUM1MjUgNDc1LjcgNjAwIDQ3Mi4zIDY3NSA0ODRDNzUwIDQ5NS43IDgyNSA1MjIuMyA4NjIuNSA1MzUuN0w5MDAgNTQ5TDkwMCA2MDFMODYyLjUgNjAxQzgyNSA2MDEgNzUwIDYwMSA2NzUgNjAxQzYwMCA2MDEgNTI1IDYwMSA0NTAgNjAxQzM3NSA2MDEgMzAwIDYwMSAyMjUgNjAxQzE1MCA2MDEgNzUgNjAxIDM3LjUgNjAxTDAgNjAxWiIgZmlsbD0iIzQ2ODFmZiI+PC9wYXRoPjxwYXRoIGQ9Ik0wIDU0M0wzNy41IDUyOS4zQzc1IDUxNS43IDE1MCA0ODguMyAyMjUgNDgwLjVDMzAwIDQ3Mi43IDM3NSA0ODQuMyA0NTAgNDkyLjdDNTI1IDUwMSA2MDAgNTA2IDY3NSA1MTMuMkM3NTAgNTIwLjMgODI1IDUyOS43IDg2Mi41IDUzNC4zTDkwMCA1MzlMOTAwIDYwMUw4NjIuNSA2MDFDODI1IDYwMSA3NTAgNjAxIDY3NSA2MDFDNjAwIDYwMSA1MjUgNjAxIDQ1MCA2MDFDMzc1IDYwMSAzMDAgNjAxIDIyNSA2MDFDMTUwIDYwMSA3NSA2MDEgMzcuNSA2MDFMMCA2MDFaIiBmaWxsPSIjNWY3NWZmIj48L3BhdGg+PHBhdGggZD0iTTAgNDk1TDM3LjUgNDk3LjVDNzUgNTAwIDE1MCA1MDUgMjI1IDUwNi41QzMwMCA1MDggMzc1IDUwNiA0NTAgNTEwLjhDNTI1IDUxNS43IDYwMCA1MjcuMyA2NzUgNTI1LjdDNzUwIDUyNCA4MjUgNTA5IDg2Mi41IDUwMS41TDkwMCA0OTRMOTAwIDYwMUw4NjIuNSA2MDFDODI1IDYwMSA3NTAgNjAxIDY3NSA2MDFDNjAwIDYwMSA1MjUgNjAxIDQ1MCA2MDFDMzc1IDYwMSAzMDAgNjAxIDIyNSA2MDFDMTUwIDYwMSA3NSA2MDEgMzcuNSA2MDFMMCA2MDFaIiBmaWxsPSIjNzc2NmZmIj48L3BhdGg+PHBhdGggZD0iTTAgNTM0TDM3LjUgNTM1LjNDNzUgNTM2LjcgMTUwIDUzOS4zIDIyNSA1MzkuN0MzMDAgNTQwIDM3NSA1MzggNDUwIDUzOC43QzUyNSA1MzkuMyA2MDAgNTQyLjcgNjc1IDU0NkM3NTAgNTQ5LjMgODI1IDU1Mi43IDg2Mi41IDU1NC4zTDkwMCA1NTZMOTAwIDYwMUw4NjIuNSA2MDFDODI1IDYwMSA3NTAgNjAxIDY3NSA2MDFDNjAwIDYwMSA1MjUgNjAxIDQ1MCA2MDFDMzc1IDYwMSAzMDAgNjAxIDIyNSA2MDFDMTUwIDYwMSA3NSA2MDEgMzcuNSA2MDFMMCA2MDFaIiBmaWxsPSIjOGY1NGZmIj48L3BhdGg+PC9zdmc+">
+    </div>
+    
+    <!-- Header -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header glass-element">
+            <div class="mdl-layout__header-row portfolio-logo-row">
+                <span class="mdl-layout__title">
+                    <div class="portfolio-logo"></div>
+                    <span class="mdl-layout-title">Max Davy</span>
+                    <span class="mdl-card__supporting-text">Mechanical/Electrical/Software Engineer</span>
+                </span>
+            </div>
+            <!-- Links for large screens -->
+            <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
+                <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                    <a class="mdl-navigation__link is-active" href="index.html">Projects</a>
+                    <a class="mdl-navigation__link" href="about.html">About</a>
+                    <a class="mdl-navigation__link" style="color: white;" href="mailto:max@davy.engineer">Contact
+                        <span class="material-icons" style="font-size:15px">
+                            mail
+                        </span>
+                    </a>
+                    <a class="mdl-navigation__link" href="https://www.linkedin.com/in/maximilian-davy/" target="_blank">LinkedIn
+                        <span class="material-icons" style="font-size:15px">
+                            person
+                        </span>
+                    </a>
+                    <a class="mdl-navigation__link" href="pay.html">Pay
+                        <span class="material-icons" style="font-size:15px">
+                            payment
+                        </span>
+                    </a>
+                </nav>
+            </div>
+        </header>
+        <!-- Links for small screens -->
+        <div class="mdl-layout__drawer mdl-layout--small-screen-only glass-element">
+            <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                <a class="mdl-navigation__link is-active" href="index.html" style="color: white;">Projects</a>
+                <a class="mdl-navigation__link" style="color: white;" href="about.html">About</a>
+                <a class="mdl-navigation__link" style="color: white;" href="mailto:max@davy.engineer">Contact
+                    <span class="material-icons" style="font-size:15px">
+                        mail
+                    </span>
+                </a>
+                <a class="mdl-navigation__link" style="color: white;" href="https://www.linkedin.com/in/maximilian-davy/" target="_blank">LinkedIn
+                    <span class="material-icons" style="font-size:15px">
+                        person
+                    </span>
+                </a>
+                <a class="mdl-navigation__link" style="color: white;" href="pay.html">Pay
+                    <span class="material-icons" style="font-size:15px">
+                        payment
+                    </span>
+                </a>
+            </nav>
+        </div>
+        <!-- Main -->
+        <main class="mdl-layout__content">
+            <div class="mdl-grid portfolio-max-width">
+                <div class="mdl-chip-row">
+                    <span class="mdl-chip-label">
+                        <span class="mdl-chip__text">Categories:</span>
+                    </span>
+                    <span class="glass-element mdl-chip" onclick="showClass('model')" data-for-category="model">
+                        <span class="mdl-chip__text">3D Models</span>
+                        <button type="button" class="mdl-chip__action model visuallyhidden clearfilter"><i class="material-icons">cancel</i></button>
+                    </span>
+                    <span class="glass-element mdl-chip" onclick="showClass('build')" data-for-category="build">
+                        <span class="mdl-chip__text">Builds</span>
+                        <button type="button" class="mdl-chip__action build visuallyhidden clearfilter"><i class="material-icons">cancel</i></button>
+                    </span>
+                    <span class="glass-element mdl-chip" onclick="showClass('website')" data-for-category="website">
+                        <span class="mdl-chip__text">Websites</span>
+                        <button type="button" class="mdl-chip__action website visuallyhidden clearfilter"><i class="material-icons">cancel</i></button>
+                    </span>
+                    <span class="glass-element mdl-chip" onclick="showClass('article')" data-for-category="article">
+                        <span class="mdl-chip__text">Journal Articles</span>
+                        <button type="button" class="mdl-chip__action article visuallyhidden clearfilter"><i class="material-icons">cancel</i></button>
+                    </span>
+                    <span class="glass-element mdl-chip" onclick="showClass('font')" data-for-category="font">
+                        <span class="mdl-chip__text">Font</span>
+                        <button type="button" class="mdl-chip__action font visuallyhidden clearfilter"><i class="material-icons">cancel</i></button>
+                    </span>
+                    <span class="glass-element mdl-chip" onclick="showClass('misc')" data-for-category="misc">
+                        <span class="mdl-chip__text">Misc</span>
+                        <button type="button" class="mdl-chip__action misc visuallyhidden clearfilter"><i class="material-icons">cancel</i></button>
+                    </span>
+                </div>
+                <!-- National Park Typeface -->
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card misc">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src="./images/NationalPark.png" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">National Park Typeface</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>
+                            I created a variation on the open source National Parks typeface optimized for CAD and CAM software. The font is inspired by the CNC routed signs used in US National Parks, National Forests, and similar locations.
+                        </p>
+                        <p>
+                            The font was redrawn to resolve compatability issues in CAD and CAM software caused by overlapping and self-intersecting SVG paths in many of the characters.
+                        </p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://github.com/Max-Davy/national-park-typeface/releases/latest/download/National.Park.Regular.ttf" target="_blank">Download TTF</a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://github.com/Max-Davy/national-park-typeface/releases/latest/download/National.Park.Regular.otf" target="_blank">Download OTF</a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://github.com/Max-Davy/national-park-typeface" target="_blank">Contribute on Github</a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://nationalparktypeface.com/" target="_blank">Original Font</a>
+                    </div>
+                </div>
+                <!-- Hanging Planter -->
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card model">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src="./images/planter.jpg" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">I created a 3D Printable Hanging Planter</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>
+                        I created a 3D printable hanging planter based on the IKEA CHILISTRÅN.
+                        </p>
+                        <p>
+                        It can be printed in 5 pieces without supports and snapped together with no fasteners or adhesive needed
+                        </p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://www.thingiverse.com/thing:7154653" target="_blank">Download files</a>
+                    </div>
+                </div>
+                <!-- Octoplex -->
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card build website">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src="./images/Octoplex.jpg" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">I created a switch plate for William Osman</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>
+                        I participated in William Osman's Lightswitch Engineering Challenge by creating the Octoplex, a duplex decorator switch cover that features 6 additional fake switches.
+                        </p>
+                        <p>
+                        I also created a product website, a custom shadowboxed pelican case, and more... I may have committed to the bit a little too hard.
+                        </p>
+                        <p>
+                        I also modelled some switch plates for a more typical number of switches. 3D print files can be downloaded below.
+                        </p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://www.thingiverse.com/thing:7168509" target="_blank">Octoplex</a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://www.thingiverse.com/thing:7164731" target="_blank">Regular Switchplates</a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://octoswitch.io" target="_blank">OCTOSWITCH.io</a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://youtube.com/clip/UgkxBX1Q314imFEWs3FraHiqt8KI3hNU7tCm" target="_blank">See William's Review</a>
+                    </div>
+                </div>
+                <!-- Sauce Sans -->
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card misc">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src="./images/Sauce-Sans.png" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Sauce Sans</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>
+                        I created a font inspired by the design language of Open Sauce. Open Sauce is an annual gathering of makers and creators in the San Francisco Bay area. It is a unique event that blends aspects of a maker fair, vidcon, and STEM convention and is centered around creating for the sake of creating.
+                    </p>
+                        <p>
+                            The font is licensed under a CC BY-NC license so you are welcome to use it for any non-commercial purpose provided you credit me by a link back to this website. If you do end up using it I'd love to see the end result!
+                        </p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://github.com/Max-Davy/Sauce-Sans/releases/latest/download/Sauce.Sans.ttf" target="_blank">Download TTF</a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://github.com/Max-Davy/Sauce-Sans/releases/latest/download/Sauce.Sans.otf" target="_blank">Download OTF</a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://github.com/Max-Davy/Sauce-Sans" target="_blank">Contribute on Github</a>
+                    </div>
+                </div>
+                <!-- Business Card Holder-->
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card model">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src="./images/business-card-holder.jpg" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Business Card Holder</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>I made a 3D printable quick-draw business card holster for collecting or distributing business cards at conferences, conventions, or tradeshows.</p>
+                        <p>Example printed using glow-in-the-dark Polymaker PolyLite PLA</p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://www.thingiverse.com/thing:7090694" target="_blank">View on Thingiverse</a>
+                    </div>
+                </div>
+                <!-- 3D Print Spool Holder-->
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card build model">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src="./images/ender-3-v2-spool.png" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">3D Printer Spool Holder</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>I designed and built an upgraded spool holder for the Ender 3 series of 3d printers to resolve filament tension issues.</p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://www.thingiverse.com/thing:5250265" target="_blank">View on Thingiverse</a>
+                    </div>
+                </div>
+                <!-- 3D Print USB-->
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card build model">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src="./images/ender-3-v2-power.jpeg" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">E3D Printer USB Mod</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>I added USB ports to my Ender 3 V2 3D printer to power my remote print controller</p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://www.thingiverse.com/thing:5832765" target="_blank">View on Thingiverse</a>
+                    </div>
+                </div>
+                <!-- Bladeless Fan-->
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card build model">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src="./images/bladeless-fan.jpg" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Bladeless Fan</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>I created a coanda effect AKA "bladeless" fan using 3d printed parts and off the shelf electronics.</p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://www.thingiverse.com/thing:7090718" target="_blank">View on Thingiverse</a>
+                    </div>
+                </div>
+                <!-- Article -->
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card article">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src="./images/article.jpg" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">A Critical Survey of Environmental Content in United States Undergraduate Mechanical Engineering Curricula</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>
+                            I co-authored this article published in <i>Sustainability</i> Volume 13 Issue 12. The article examines how mechanical engineers are being prepared to be responsible stewards of
+                        the environment by offering a multi-channeled look at a diverse collection of twelve US colleges and universities, with connections to the larger global context. 
+                        </p>
+                        <p>
+                        The results show the environment receiving sparse treatment in core
+                        course textbooks, institutions having zero environment-focused degree requirements, and a tendency towards offering electives that are narrowly focused on green technologies. Overall, the environmental education mechanical engineers
+                        are receiving is insufficient in amount and lacking in scientific and ethical foundation.
+                    </p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://www.mdpi.com/2071-1050/13/12/6961/htm" target="_blank">Read article at MDPI.com</a>
+                    </div>
+                </div>
+                <!-- Process Trainer -->
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card build">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src="./images/process-trainer.jpg" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Process Trainer/Stirred Reactor</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        For my Mechanical Engineering Senior Design project, I, along with two teammates, designed and built a stirred reactor/process trainer for my college's School of Engineering. This is a computer-controlled system designed to perform chemical reactions, and is now used by the university for Mechanical/Electrical Engineering students studying control systems and for Chemical Engineering students to run industrial processes. The project was described as "a superior senior design project" and "a landmark project" for the School of Engineering.</p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="./process-trainer.html">Learn More</a>
+                    </div>
+                </div>
+                <!-- Laser Cutter -->
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card build">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src="./images/laser-cutter.jpg" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Laser Cutter</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        For my Honors Program senior project, I designed a CNC laser cutter for the Benedictine College School of Engineering Shop. The cutter has a working area of 1 yard square. It features a 45 Watt CO2 laser, air assist, touchscreen control, and an infrared
+                        monitoring camera. The device has a cost of $2,500, far less than comperable commercial options. The project involved a wide range of engineering concepts including circuits, computer aided design, mechanical, thermal, and optical
+                        material properties, thermodynamics, fluids, and control systems. It utilizes as a variety of fabrication methods including CNC machineing, 3d printing, and welding.
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="./laser-cutter.html">Learn More</a>
+                    </div>
+                </div>
+                <!-- Bike Rack -->
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card build">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src="./images/bike-rack.jpg" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Bike Share</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        In the spring of 2018 I was one of a small group of Benedictine College students who, under the sponsorship of the College's Discovery Day program, designed a series of bicycle racks for the City of Atchison's new bike share program. The bike racks were
+                        intended to be representative of local history; my design was made to resemble a biplane in honor of Amelia Earhart, who was born in Atchison.
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="./bike-rack.html">project Details</a>
+                    </div>
+                </div>
+                <!-- Tengwar Transcriber -->
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card website font">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src="./images/tengwar-feanor.jpeg" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Tengwar Transcriber</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        Tengwar Transcriber is dedicated to the languages of Middle Earth. Its main features are Elvish and Dwarvish transcribers, but it also features a selection of Tolkien's poems, maps of middle earth, and more. A limited set of features is available as Windows
+                        and Android apps.
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://tengwartranscriber.github.io" target="_blank">Launch</a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://github.com/TengwarTranscriber/tengwartranscriber.github.io/" target="_blank">Github</a>
+                    </div>
+                </div>
+                <!-- Sabaton Timeline -->
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card website">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src="./images/sabaton-timeline.jpeg" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Sabaton Timeline</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        Sabaton Timeline is an interactive timeline of the historical persons and events depicted in the songs of the Swedish power metal band Sabaton. It features the band's notes on the songs and information on the subjects they depict.<br/>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://sabaton-timeline.com/" target="_blank">Launch</a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://www.sabaton.net/" target="_blank">Sabaton Site</a>
+                    </div>
+                </div>
+                <!-- Text to Phonetic -->
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card website">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src="./images/phonetic.jpeg" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Text to Phonetic</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        Text To Phonetic is a pronunciation guide for English speakers who have trouble understanding the International Phonetic Alphabet. It uses a custom-compiled dictionary to convert English words or sentences to the phonetically-spelled equivalent.
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://max-davy.github.io/text-to-phonetic/">Launch</a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://github.com/max-davy/text-to-phonetic" target="_blank">Github</a>
+                    </div>
+                </div>
+                <!-- Sketchy -->
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card website">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src="./images/sketchy.jpeg" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Sketchy</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        Sketchy is an online drawing program. It features a variety of advanced brushes, as well as basic features such as image export, changing image/color backgrounds, etc.
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://sketchier.github.io" target="_blank">Launch</a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://github.com/sketchier/sketchier.github.io" target="_blank">Github</a>
+                    </div>
+                </div>
+                <!-- RND Trees -->
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card website">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src="./images/trees.jpeg" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">RND Trees</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        RND Trees is a mod for the Minecraft-like voxel game Minetest that adds naturally-growing trees to the game. The trees use a growth algorithm to behave like real trees, branching and growing leaves gradually based on growth parameters (which can be tuned
+                        to simulate actual tree species) and available light.
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://max-davy.github.io/rnd_trees/" style="padding-right: 5px;">Launch</a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://github.com/max-davy/rnd_trees" target="_blank" style="padding-left: 5px; padding-right: 5px;">Github</a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://www.minetest.net/" target="_blank" style="padding-left: 5px;">Minetest</a>
+                    </div>
+                </div>
+                <!-- Speck -->
+                <div class="mdl-cell mdl-card ms-depth-4 portfolio-card glass-card website">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src="./images/speck.jpeg" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Speck</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        Speck is a WebGL-powered 3D atomic structure renderer. Speck is an open-source project created by Rye Terrell, who has not maintained it since 2015. My version remedies a major inconvenience of the original, that of finding properly formatted molecular
+                        models to import. An integrated search box allows searching of a database of structure files by compound name, as well pulling information about the selected compound from Wikipedia.
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://max-davy.github.io/speck/" style="padding-right: 5px;">Launch</a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://github.com/max-davy/speck" target="_blank" style="padding-left: 5px; padding-right: 5px;">Github</a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://github.com/wwwtyro/speck" target="_blank" style="padding-left: 5px;">Source</a>
+                    </div>
+                </div>
+            </div>
+            <footer class="glass-element mdl-mini-footer">
+                <div class="mdl-mini-footer__left-section">
+                    <div class="mdl-logo">© 2024 Max Davy</div>
+                </div>
+                <div class="mdl-mini-footer__right-section">
+                    <ul class="mdl-mini-footer__link-list">
+                        <li>Created using:</li>
+                        <li><a href="https://pages.github.com" target=_blank>Github Pages</a></li>
+                        <li><a href="https://getmdl.io" target="_blank">Material Design Lite</a></li>
+                        <li><a href="https://vscodium.com/" target="_blank">VS Codium</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </main>
+    </div>
+    <script src="./styles/material.js"></script>
+</body>
