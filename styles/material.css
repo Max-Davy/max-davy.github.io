@@ -7811,6 +7811,12 @@ iframe.heightSet {
 * Glass UI modifications begin
 */
 
+.center{
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    text-align:center;
+}
 
 main {
     transition-duration: .2s;
