@@ -17,7 +17,12 @@ const staticFiles = [
   '/bike-rack.html',
   '/laser-cutter.html',
   '/octoplex.html',
-  '/process-trainer.html'
+  '/process-trainer.html',
+  '/Vend/index.html',
+  '/Vend/carousel.html',
+  '/Vend/pain.svg',
+  '/Vend/Schematic.png',
+  '/Vend/OPEN PAIN V5 WHITE.png'
 ];
 
 // routes to cache
@@ -26,6 +31,7 @@ const routes = [
   '/images',
   '/scripts',
   '/styles',
+  '/Vend'
 ];
 
 // combine static files and routes to cache
