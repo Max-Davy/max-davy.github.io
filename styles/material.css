@@ -7811,6 +7811,22 @@ iframe.heightSet {
 * Glass UI modifications begin
 */
 
+.img-overlay {
+  position:absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 0px 16px;
+  background: rgba(0, 0, 0, 0);
+  color: #fff;
+}
+
+.mdl-card__media {
+    position: relative;
+    display: inline-block;
+}
+
 .center{
     margin-left:auto;
     margin-right:auto;
