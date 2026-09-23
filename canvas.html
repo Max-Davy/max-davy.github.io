@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SauceDraw</title>
+
+  <link rel="stylesheet" href="./styles/canvas.css">
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+
+  <div id="status" class="status"></div>
+
+  <div class="fab-container">
+    <label class="fab color-fab" title="Choose color">
+      <span>🎨</span>
+      <span class="fab-label">Choose color</span>
+      <input id="colorPicker" type="color" value="#ff0000" />
+    </label>
+
+    <button id="sampleButton" class="fab" title="Sample a pixel">
+      <span>🖊</span>
+      <span class="fab-label">Sample pixel</span>
+    </button>
+
+    <button id="settingsButton" class="fab" title="Settings">
+      <span>⚙</span>
+      <span class="fab-label">Settings</span>
+    </button>
+  </div>
+
+  <div id="tooltip" class="tooltip"></div>
+  <div id="toast"></div>
+
+  <div id="settingsBackdrop" class="modal-backdrop">
+    <section class="modal">
+      <h2>SauceDraw Settings</h2>
+
+      <p class="help">
+        Canvas dimensions are the number of logical pixels in the artwork.
+        Pixels are stretched to fill the screen.
+      </p>
+
+      <div class="form-row">
+        <label for="settingsWidth">Canvas width in pixels</label>
+        <input id="settingsWidth" type="number" min="1" max="500" step="1"/>
+        <button id="settingsAutoWidth" class="icon" title="Adjust to match height">✨</button>
+      </div>
+
+      <div class="form-row">
+        <label for="settingsHeight">Canvas height in pixels</label>
+        <input id="settingsHeight" type="number" min="1" max="500" step="1"/>
+        <button id="settingsAutoHeight" class="icon" title="Adjust to match width">✨</button>
+      </div>
+
+      <div class="form-row">
+        <label for="settingsCooldown">Cooldown in seconds</label>
+        <input id="settingsCooldown" type="number" min="0" max="86400" step="0.1" />
+      </div>
+
+      <div class="form-row">
+        <label for="settingsPassword">Settings password</label>
+        <input id="settingsPassword" type="text" />
+      </div>
+
+      <div class="modal-actions">
+        <div class="modal-actions-left">
+          <button id="exportButton">Export</button>
+          <button id="importButton">Import</button>
+          <input id="importFile" type="file" accept=".json,application/json" hidden />
+        </div>
+
+        <div class="modal-actions-right">
+          <button id="cancelSettingsButton">Cancel</button>
+          <button id="saveSettingsButton" class="primary">Save</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="./scripts/canvas.js"></script>
+</body>
+
+</html>

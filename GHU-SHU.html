@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHU ↔ GHU Converter</title>
+
+  <style>
+    :root {
+      --red: #d62828;
+      --dark: #222;
+      --light: #fff7f0;
+      --border: #ddd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      color: var(--dark);
+    }
+
+    .converter {
+      width: 100%;
+      max-width: 480px;
+      padding: 30px;
+      border-radius: 18px;
+      background: var(--light);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      margin-top: 0;
+      color: var(--red);
+      text-align: center;
+    }
+
+    .description {
+      color: #666;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .unit-field {
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: white;
+      font-size: 1rem;
+    }
+
+    input:focus {
+      outline: 3px solid rgba(214, 40, 40, 0.2);
+      border-color: var(--red);
+    }
+
+    .error {
+      min-height: 20px;
+      margin-top: 6px;
+      color: var(--red);
+      font-size: 0.9rem;
+    }
+
+    .formula {
+      margin-top: 22px;
+      padding: 12px;
+      border-radius: 8px;
+      background: #ffe1d1;
+      text-align: center;
+      font-family: Georgia, serif;
+    }
+
+    .note {
+      margin-top: 18px;
+      color: #666;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    /* Chrome, Edge, Safari, and other WebKit/Blink browsers */
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type="number"] {
+      -moz-appearance: textfield;
+      appearance: textfield;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="converter">
+    <h1>Convert between Scoville Heat Units and Guchujang Hot-Taste Units</h1>
+
+    <p class="description">
+      Enter a value in either box. The other value will update automatically.
+    </p>
+
+    <div class="unit-field">
+      <label for="shu">Scoville Heat Units (SHU)</label>
+      <input id="shu" type="number" min="0" step="0.1" placeholder="Enter SHU" />
+    </div>
+
+    <div class="unit-field">
+      <label for="ghu">Gochujang Hot-Taste Units (GHU)</label>
+      <input id="ghu" type="number" min="0" step="0.1" placeholder="Enter GHU" />
+    </div>
+
+    <div class="error" id="errorMessage"></div>
+  </main>
+
+  <script>
+    const shuInput = document.getElementById("shu");
+    const ghuInput = document.getElementById("ghu");
+    const errorMessage = document.getElementById("errorMessage");
+
+    let lastEdited = "";
+
+
+    function showError(message) {
+      errorMessage.textContent = message;
+    }
+
+    function clearError() {
+      errorMessage.textContent = "";
+    }
+
+    function updateFromSHU() {
+      let rawValue = shuInput.value;
+
+      if (rawValue === "") {
+        ghuInput.value = "";
+        clearError();
+        return;
+      }
+
+      let shu = Number(rawValue);
+
+      if (!Number.isFinite(shu)) {
+        ghuInput.value = "";
+        showError("Please enter a valid SHU value.");
+        return;
+      }
+
+      if (shu < 0) {
+        ghuInput.value = "";
+        showError("Negative values are not allowed.");
+        return;
+      }
+
+      let ghu = (shu + 184.6) / 16.15;
+
+      if (ghu < 0) {
+        ghuInput.value = "";
+        showError("Selected SHU value is out of GHU range");
+      } else {
+        ghuInput.value = parseFloat(ghu.toFixed(1));
+        clearError();
+      }
+
+    }
+
+    function updateFromGHU() {
+      let rawValue = ghuInput.value;
+
+      if (rawValue === "") {
+        shuInput.value = "";
+        clearError();
+        return;
+      }
+
+      let ghu = Number(rawValue);
+
+      if (!Number.isFinite(ghu)) {
+        shuInput.value = "";
+        showError("Please enter a valid GHU value.");
+        return;
+      }
+
+      if (ghu < 0) {
+        shuInput.value = "";
+        showError("Negative values are not allowed.");
+        return;
+      }
+
+      let shu = 16.15 * ghu - 184.6;
+
+      if (shu <= 0) {
+        shuInput.value = "";
+        showError("Selected GHU value is out of SHU range.");
+      } else {
+        shuInput.value = parseFloat(shu.toFixed(1));
+        clearError();
+      }
+    }
+
+
+    shuInput.addEventListener("input", () => {
+      if (document.activeElement == shuInput) {
+        lastEdited = "shu";
+        updateFromSHU();
+      }
+    });
+
+    ghuInput.addEventListener("input", () => {
+      if (document.activeElement == ghuInput) {
+        lastEdited = "ghu";
+        updateFromGHU();
+      }
+    });
+
+  </script>
+</body>
+
+</html>
